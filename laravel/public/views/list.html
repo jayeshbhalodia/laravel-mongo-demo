@@ -1,0 +1,35 @@
+<section data-ng-controller="TestController" data-ng-init="getList()">
+	<div class="container" style="padding-top:130px">
+		<div class=" well ic-well">
+			<h3 class="page-title">Demo CRUD
+				<a href="/#!/add" class="pull-right">Add Record</a>
+			</h3>	
+			<hr/>
+			<div class="row row-item-list" ng-repeat="data in networkData">
+				<div class="col-md-12">
+					<h4>{{data.uid}}<br>
+	    			<span class="glyphicon glyphicon-trash pull-right" data-ng-click="delete(data._id)" style="padding-left:15px;cursor:pointer"></span>
+	    			<a href="/#!/data/{{data._id}}/edit"><span class="glyphicon glyphicon glyphicon-cog pull-right"></span></a>
+	    			</h4>
+	    		</div>
+			</div>
+
+			<h3 data-ng-show="networkData.length === 0" class="text-center">Ah, There are any data!</h3>
+		</div>	
+	</div>
+
+	<!-- Delete confirm popup -->
+	<script type="text/ng-template" id="myModalContent.html">
+		<div class="modal-header">
+			<h3>Delete confirmation</h3>
+		</div>
+		<div class="modal-body">
+			<p>Hey,</p>
+			<p>Do you want to delete selected record?</p>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-danger" ng-click="ok()">Yes Please!</button>
+			<button class="btn btn-default" ng-click="cancel()">Cancel</button>
+		</div>
+	</script>
+</section>

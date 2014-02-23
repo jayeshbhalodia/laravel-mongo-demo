@@ -1,0 +1,22 @@
+body {
+	font-family:'Open Sans',sans-serif;
+	background-color:#F8F8F8;	
+}
+input,select,textarea { font-family:'Nobile',sans-serif; }
+h1,h2,h3, .cool-font, .cool-font * { font-family:'Dosis',sans-serif; }
+.ic-well { background-color: white; }
+.text-error{
+	background-color: #FDF7F7;
+	border-left: 3px solid #EED3D7;	
+	padding: 10px;
+	display: block;
+	color:#B94A48;
+	margin-top:8px;
+}
+.row-item-list {
+	border-bottom: 1px solid #f1f1f1;
+	padding:0px 0px 10px 0px;
+}
+.page-title {
+	color:#00B1DB;
+}

@@ -1,0 +1,75 @@
+<section data-ng-controller="TestController" data-ng-init="getData()">
+	<form name="testForm">
+		<div class="container" style="padding-top:130px">
+			<div class="well ic-well">
+				<div class="row">
+					<div class="col-md-12">
+						<label>User Id </label>
+						<input type="text" class="form-control" name="Uid" data-ng-model="Uid" data-ng-required='true'>
+					</div>
+				</div>
+				
+				<h3>Network details</h3>
+				<hr>
+				<div class="row" data-ng-repeat="network in networks">
+					<div class="col-md-2">
+						<label>Nid</label>
+						<input type="text" name="Nid" class="form-control" data-ng-model="network.Nid" data-ng-required='true'>
+						<span class="text-error" data-ng-show="isSubmitted && testForm.Nid.$error.required">Your Nid can't be blank.</span>
+					</div>
+					<div class="col-md-2">
+						<label>Name</label>
+						<input type="text" name="Name" class="form-control" data-ng-model="network.Name" data-ng-required='true'>
+						<span class="text-error" data-ng-show="isSubmitted && testForm.Name.$error.required">Your Name can't be blank.</span>
+					</div>
+					<div class="col-md-2">
+						<label>Ip</label>
+						<input type="text" name="Ip" class="form-control" data-ng-model="network.Ip" data-ng-required='true'>
+						<span class="text-error" data-ng-show="isSubmitted && testForm.Ip.$error.required">Your Ip can't be blank.</span>
+					</div>
+					<div class="col-md-2">
+						<label>Status</label>
+						<input type="text" name="Status"  class="form-control" data-ng-model="network.Status" data-ng-required='true'>
+						<span class="text-error" data-ng-show="isSubmitted && testForm.Status.$error.required">Your Status can't be blank.</span>
+					</div>
+				</div>
+				
+				<div clas="row">
+					<div class="col-md-2 pull-right">
+						<button type="button" class="btn btn-success" data-ng-click="addNewMember()">+</button>
+					</div>
+					&nbsp;
+				</div>
+				
+				<h3>Host details</h3>
+				<hr>
+				<div class="row" data-ng-repeat="networkhost in networkHosts">
+					<div class="col-md-4">
+						<label>HostName</label>
+						<input type="text" name="Hostname" class="form-control" data-ng-model="networkhost.Hostname" data-ng-required='true'>
+						<span class="text-error" data-ng-show="isSubmitted && testForm.Hostname.$error.required">Your Hostname can't be blank.</span>
+					</div>
+					<div class="col-md-4">
+						<label>HostName Block</label>
+						<input type="text" name="hostblock"  class="form-control" data-ng-model="networkhost.hostblock" data-ng-required='true'>
+						<span class="text-error" data-ng-show="isSubmitted && testForm.hostblock.$error.required">Your hostblock can't be blank.</span>
+					</div>
+				</div>
+
+				<div clas="row">
+					<div class="col-md-2 pull-right">
+						<button type="button" class="btn btn-success" data-ng-click="addNewMemberHost()">+</button>
+					</div>
+					&nbsp;
+				</div>
+				
+				<hr>					
+				<div class="row">
+					<div class="col-md-12">
+						<button type="button" class="btn btn-primary" data-ng-click="editData()"> Submit</button>
+						| <a href="/#!/">Back</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
